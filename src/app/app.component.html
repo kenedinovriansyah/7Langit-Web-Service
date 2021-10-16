@@ -1,0 +1,56 @@
+<!-- Navbar -->
+<div class="flex items-center justify-between px-4 w-full h-16 shadow-pedia">
+  <img
+    src="https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/f9cd7f4c9530dcbbc40233fec7b41852.jpg"
+    alt=""
+    class="w-32 h-12 bg-cover bg-center bg-no-repeat"
+  />
+  <div class="flex items-center">
+    <button
+      (click)="clickRouter(loggedIn ? 'event-music' : 'login-accounts')"
+      class="
+        bg-pedia
+        w-28
+        h-8
+        rounded-md
+        text-white
+        font-sans
+        text-normal
+        shadow-pedia
+        mr-2
+      "
+    >
+      {{ loggedIn ? "Event Music" : "Sign In" }}
+    </button>
+    <button
+      (click)="loggedIn ? clickLogout() : clickRouter('register-accounts')"
+      class="w-28 color h-8 rounded-md font-sans text-normal mr-2 border-pedia"
+    >
+      {{ loggedIn ? "Log out" : "Sign Up" }}
+    </button>
+  </div>
+</div>
+<!-- Notification -->
+
+<div
+  (click)="close()"
+  [class]="
+    message.show === 1
+      ? 'absolute top-0 right-0 w-96 max-w-full shadow-pedia rounded-md bg-white p-2 knd-animation-op cursor-pointer'
+      : message.show === 2
+      ? 'absolute top-0 right-0 w-96 max-w-full shadow-pedia rounded-md bg-white p-2 knd-animation-down'
+      : 'hidden'
+  "
+>
+  <div [class]="message.valid ? 'text-normal color' : 'text-normal text-red'">
+    {{ message.valid ? "Successfully" : "Failed" }}
+  </div>
+  <div class="text-xs break-words text-gray-500 font-sans">
+    {{ message.message }}
+  </div>
+</div>
+
+<!-- Content -->
+<div class="py-4">
+  <router-outlet></router-outlet>
+</div>

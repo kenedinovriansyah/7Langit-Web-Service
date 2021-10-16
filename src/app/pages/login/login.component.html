@@ -1,0 +1,95 @@
+<div class="w-full h-screen flex items-center justify-center">
+  <form
+    (ngSubmit)="submit()"
+    class="flex items-center justify-center flex-col max-w-full"
+    style="width: 420px"
+  >
+    <div class="py-1 w-full">
+      <div
+        class="
+          knd-field
+          shadow-pedia
+          w-full
+          h-12
+          rounded-lg
+          overflow-hidden
+          flex
+          items-center
+        "
+      >
+        <input
+          type="text"
+          name="username"
+          [(ngModel)]="username"
+          (ngModelChange)="change($event, 'username')"
+          id="username"
+          placeholder="Username"
+          autocomplete="off"
+          aria-autocomplete="off"
+          aria-placeholder="Username"
+          class="text-gray-500 text-normal font-medium"
+        />
+      </div>
+    </div>
+    <div class="py-1 w-full">
+      <div
+        class="
+          knd-field
+          shadow-pedia
+          w-full
+          h-12
+          rounded-lg
+          overflow-hidden
+          flex
+          items-center
+        "
+      >
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          (ngModelChange)="change($event, 'password')"
+          id="password"
+          placeholder="Password"
+          autocomplete="off"
+          aria-autocomplete="off"
+          aria-placeholder="Password"
+          class="text-gray-500 text-normal font-medium"
+        />
+      </div>
+    </div>
+    <div class="flex items-center justify-between w-full py-2">
+      <div class="pretty p-switch p-fill">
+        <input
+          name="remember"
+          type="checkbox"
+          [(ngModel)]="rememmber"
+          (ngModelChange)="change($event, 'remember')"
+        />
+        <div class="state text-gray text-normal p-success">
+          <label class="font-bold text-gray-500">Remember me</label>
+        </div>
+      </div>
+      <a
+        href=""
+        class="
+          color
+          font-normal
+          transition
+          duration-500
+          ease-in-out
+          hover:underline
+        "
+        >Forgotted password?</a
+      >
+    </div>
+    <div class="pt-6 w-full flex items-center justify-center">
+      <button
+        class="w-64 h-10 shadow-pedia rounded-lg bg-pedia text-white font-bold"
+        type="submit"
+      >
+        Log In
+      </button>
+    </div>
+  </form>
+</div>

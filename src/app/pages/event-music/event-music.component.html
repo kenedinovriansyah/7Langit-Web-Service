@@ -1,0 +1,65 @@
+<div class="flex justify-center flex-wrap w-full">
+  <div
+    *ngFor="let item of event"
+    class="
+      w-72
+      max-w-full
+      shadow-pedia
+      overflow-hidden
+      rounded-md
+      cursor-pointer
+      transition
+      duration-700
+      hover:bg-gray-100
+      m-1
+    "
+  >
+    <div class="h-32">
+      <img
+        [src]="
+          item.banner
+            ? item.banner
+            : 'https://static.wikia.nocookie.net/nopixel/images/b/b4/Not-found-image-15383864787lu.jpg/revision/latest?cb=20200910062142'
+        "
+        alt=""
+        class="bg-center bg-cover bg-no-repeat w-full h-full"
+      />
+    </div>
+    <div class="p-3">
+      <div class="text-sm text-gray-500 font-medium">
+        {{ item.name }}
+      </div>
+      <div class="flex items-center py-2">
+        <i class="fas fa-calendar-alt w-6 color"></i>
+        <span class="text-xs text-gray-500 font-bold">
+          {{ item.schedulers?.start_date | amDateFormat: "DD MMM YYYY" }} -
+          {{ item.schedulers?.end_date | amDateFormat: "DD MMM YYYY" }}
+        </span>
+      </div>
+      <div class="flex items-center py-2">
+        <i class="fas fa-map w-6 color"></i>
+        <span class="text-xs text-gray-500 font-bold">
+          Event {{ item.district }}
+        </span>
+      </div>
+      <div class="py-1">
+        <div
+          class="w-full"
+          style="background-color: RGB(235, 237, 240); height: 1px"
+        ></div>
+      </div>
+      <div class="flex items-center justify-between w-full pt-2">
+        <img
+          src="https://s3-ap-southeast-1.amazonaws.com/loket-production-sg/images/organization/20200703180134_5eff100e5b16e.png"
+          alt=""
+          class="w-6 h-6 bg-cover bg-center bg-no-repeat"
+        />
+        <div class="w-56">
+          <span class="text-xs font-bold text-gray-500">{{
+            item.organization_name
+          }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

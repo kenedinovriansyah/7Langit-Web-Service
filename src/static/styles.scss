@@ -1,0 +1,108 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://use.fontawesome.com/releases/v5.15.3/css/all.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Kanit&family=Lato:wght@900&family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+@import "~pretty-checkbox/src/pretty-checkbox.scss";
+
+$font-family-Inter: "Inter", sans-serif;
+$font-family-Kanit: "Kanit", sans-serif;
+$font-family-Lato: "Lato", sans-serif;
+$font-family-Open: "Open Sans", sans-serif;
+$font-family-public: "Public Sans", sans-serif;
+
+$white: RGBA(255, 255, 255);
+$boxshadow-pedia: RGB(0 0 0 / 7%) 0px 4px 6px -1px;
+$boxshadow: 0px 0px 10px -7px RGBA(0, 0, 0, 0.75);
+$boxshadow-button: RGB(0 171 85 / 24%) 0px 8px 16px 0px;
+$gray: #c9d1d9;
+$color: RGB(0, 171, 85);
+$text: RGBA(49, 53, 59, 0.68);
+
+body {
+  overflow-x: hidden;
+}
+
+.shadow-pedia {
+  box-shadow: $boxshadow-pedia;
+  -webkit-box-shadow: $boxshadow-pedia;
+  -moz-box-shadow: $boxshadow-pedia;
+}
+
+.bg-pedia {
+  background-color: $color;
+}
+
+.text-normal {
+  font-size: 14px;
+}
+
+.color {
+  color: $color;
+}
+
+.border-pedia {
+  border: 1px solid $color !important;
+}
+
+.border-error {
+  animation: input-error 1s forwards;
+}
+
+@keyframes input-error {
+  from {
+  }
+  to {
+    border: 1px solid red;
+  }
+}
+
+.knd-animation-op {
+  animation: noc-op 1.5s forwards;
+}
+
+@keyframes noc-op {
+  from {
+    right: -1200px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+.knd-animation-down {
+  animation: noc-down 1.5s forwards;
+}
+
+@keyframes noc-down {
+  from {
+    right: 0;
+    opacity: 1;
+  }
+  to {
+    right: -1200px;
+    opacity: 0;
+  }
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+}
+
+.text-red {
+  color: red;
+}
+
+.knd-field {
+  input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0px 15px 0px 15px;
+  }
+}
